@@ -2,12 +2,16 @@
 @import "../../../../bower_components/bootstrap/scss/mixins/buttons";
 
 div.window.dialog /*specificity*/ {
+	height: auto!important;
 	padding: 0;
 	background-color: $modal-content-bg;
 	background-clip: padding-box;
 	@include box-shadow(0 3px 9px rgba(0,0,0,.5));
 	// Remove focus outline from opened modal
 	outline: 0;
+	//Always get moved to top, so just embrace it
+	top: 100px!important;
+	left: 10%!important;
 
 	&::before {
 	  content: '';
@@ -25,7 +29,6 @@ div.window.dialog /*specificity*/ {
 	  background-color: $color-app-grey;
 	  height: 70px;
 	  color: $color-white;
-
 	}
 
 	td.activewindowtitle {
@@ -39,6 +42,7 @@ div.window.dialog /*specificity*/ {
 		color: $color-white;
 		height: auto;
 	}
+
 	td.windowbuttons {
 		color: inherit;
 		height: auto;
@@ -48,7 +52,9 @@ div.window.dialog /*specificity*/ {
 			padding: 0 10px 0 0;
 		}
 	}
+
 	.windowcontent {
+		position: initial;
 		top: 70px;
 		padding:15px;
 		border:none;
@@ -59,6 +65,11 @@ div.window.dialog /*specificity*/ {
 		right:initial;
 		width: 100%;
 	}
+
+	.actions {
+		margin-top: 10px;
+	}
+
 	.actions.bottom {
 		width: 100%;
 		text-align: right;

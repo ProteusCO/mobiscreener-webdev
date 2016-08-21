@@ -43,3 +43,11 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+@mixin addActionButtonBorder($color: '') {
+  border-bottom: 4px solid $color;
+  @include breakpoint($bp-tablets-portrait) {
+    border-left: 4px solid $color;
+    border-bottom: none;
+  }
+}
